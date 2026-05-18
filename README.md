@@ -1,6 +1,8 @@
 # 🤖 Neuro Plot — AI-Powered DIY CNC Plotter
 
-A Python desktop application that turns a DIY 28BYJ-48 stepper-motor CNC plotter into an AI-assisted drawing machine. You can plot images, hand-written text, AI-generated drawings, SVG files, and G-code — all from one clean interface.
+A Python desktop application that turns a DIY 28BYJ-48 stepper-motor CNC plotter into an AI-powered drawing machine.
+
+Just type **"draw a square"** and the plotter draws it. Type **"draw a house"** and it draws that too. The Google Gemini AI understands your request, generates the exact XY coordinates, and sends them directly to the hardware — no manual input needed.
 
 ---
 
@@ -18,6 +20,40 @@ A Python desktop application that turns a DIY 28BYJ-48 stepper-motor CNC plotter
 | **Live Preview** | See the drawing path in real-time before/during plotting |
 | **Simulation Mode** | Test without hardware connected |
 | **Emergency Stop** | One-click abort at any time |
+
+---
+
+## 🧠 How the AI Drawing Works
+
+Neuro Plot uses **Google Gemini AI** as its brain. When you type a command in the AI Assistant tab, here's what happens:
+
+```
+You type:  "draw a square"
+    ↓
+Gemini AI interprets the request and generates a list of
+exact plotter coordinates (MOVE / PEN_UP / PEN_DOWN actions)
+    ↓
+The app centres the drawing on the 100×100 mm workspace
+    ↓
+The coordinates are sent over serial to the Arduino
+    ↓
+The stepper motors move and the plotter physically draws it
+```
+
+### Example commands you can say:
+
+| You say | What happens |
+|---|---|
+| `draw a square` | Plotter draws a square |
+| `draw a circle` | Plotter draws a circle |
+| `draw a star` | Plotter draws a 5-pointed star |
+| `draw a house` | Plotter draws a simple house shape |
+| `write HELLO` | Plotter writes the word in the current font style |
+| `draw a smiley face` | Plotter draws a smiley |
+
+You can also use **voice input** — click the 🎤 button and speak your command aloud.
+
+After Gemini generates the drawing, click **"Send to Plotter →"** and it starts drawing immediately. The live preview canvas shows the path in real-time as the pen moves.
 
 ---
 
