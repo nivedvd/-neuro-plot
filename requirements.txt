@@ -1,0 +1,7 @@
+opencv-python
+Pillow
+pyserial
+SpeechRecognition
+google-generativeai
+svgpathtools
+cairosvg

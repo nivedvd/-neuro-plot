@@ -1,0 +1,42 @@
+# === Python ===
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# === Virtual Environments ===
+venv/
+env/
+.venv/
+
+# === Secrets — NEVER commit your API key ===
+# If you store your key directly in config.py, add it here:
+# config.py
+
+# === Logs ===
+plotter.log
+*.log
+
+# === OS junk ===
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# === IDEs ===
+.vscode/
+.idea/
+*.swp
+
+# === Test / Debug scripts (optional — remove if you want to keep them) ===
+brute_force_connection.py
+comprehensive_diagnostic.py
+debug_connection.py
+listen_for_reset.py
+list_models.py
+list_ports_details.py
+test_*.py

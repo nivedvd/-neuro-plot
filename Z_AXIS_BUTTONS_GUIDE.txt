@@ -1,0 +1,90 @@
+================================================================================
+WHERE TO FIND Z JOG BUTTONS IN THE APP
+================================================================================
+
+1. Open Neuro Plot app
+2. Click "Settings" tab (at the top)
+3. Scroll down until you see this section:
+
+┌─────────────────────────────────────────────────────────────────┐
+│ 🔧 Calibration Tools                                            │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│ Test Movement (10mm):                                           │
+│ [Move X +10mm]  [Move Y +10mm]                                 │
+│                                                                 │
+│ Z Jog (Fine Tune):                                             │
+│ [Z Up (+10)]    [Z Down (-10)]                                 │
+│                                                                 │
+│ Shaking Fixes:                                                 │
+│ [Fix Shaking (Swap Phases)]  [Extra Torque (Mode)]            │
+│                                                                 │
+│ [Flip Direction]                                               │
+│                                                                 │
+│ [Reset Z State (Force)]                                        │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+
+================================================================================
+QUICK TEST SEQUENCE
+================================================================================
+
+1. Click [Z Down (-10)]
+   → Pen should move DOWN
+   → If it moves UP, click [Flip Direction] and try again
+
+2. Click [Z Up (+10)]
+   → Pen should move UP
+   → Should be quick and smooth
+
+3. Click [Z Down (-10)] several times
+   → Pen should move down smoothly
+   → If it shakes, click [Fix Shaking (Swap Phases)]
+
+4. If pen is weak or slow:
+   → Click [Extra Torque (Mode)]
+   → Test again with [Z Down (-10)]
+
+================================================================================
+ADJUSTING PEN LIFT DISTANCE
+================================================================================
+
+Still in Settings tab, scroll UP to find:
+
+┌─────────────────────────────────────────────────────────────────┐
+│ Pen Lift Distance (steps)                                       │
+│ ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+│ Current value: 400                                              │
+│                                                                 │
+│ If pen doesn't reach paper:                                    │
+│   - Drag slider to the RIGHT (increase to 500, 600, 700)      │
+│   - Click [Apply All Calibration]                             │
+│   - Test with Z Jog buttons                                   │
+│                                                                 │
+│ If pen lifts too high:                                         │
+│   - Drag slider to the LEFT (decrease to 300, 250)            │
+│   - Click [Apply All Calibration]                             │
+│   - Test with Z Jog buttons                                   │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+
+================================================================================
+AFTER TESTING - DRAW SOMETHING
+================================================================================
+
+1. Go to "Drawing" tab
+2. Select an image or enter text
+3. Click "Start Drawing"
+4. Watch the pen:
+   - Should go DOWN quickly before drawing
+   - Should go UP quickly after drawing
+   - Should NOT be slow or stuck
+
+If it works → You're done! Z-axis is fixed.
+
+If it still doesn't work → Go back to Step 2 and try:
+   - [Flip Direction]
+   - [Fix Shaking (Swap Phases)]
+   - [Extra Torque (Mode)]
+
+================================================================================

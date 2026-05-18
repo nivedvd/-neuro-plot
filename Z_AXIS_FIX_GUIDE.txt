@@ -1,0 +1,141 @@
+================================================================================
+Z-AXIS FIX - SIMPLE STEP-BY-STEP GUIDE
+================================================================================
+
+PROBLEM: Z-axis (pen up/down) is slow and not coming down properly.
+
+SOLUTION: We made the Z-axis faster and stronger.
+
+================================================================================
+STEP 1: UPLOAD THE FIXED FIRMWARE
+================================================================================
+
+1. Open Arduino IDE
+2. Open file: diy cnc/arduino_plotter_smooth.ino
+3. Click "Upload" button
+4. Wait for "Done uploading" message
+
+This firmware now has:
+- Z moves 2x faster (was 1500 µs/step, now 800 µs/step)
+- Z travels further (was 250 steps, now 400 steps)
+- Z stays powered when pen is down (holds pressure on paper)
+
+================================================================================
+STEP 2: TEST Z-AXIS IN THE APP
+================================================================================
+
+1. Open the Neuro Plot app (main.py)
+2. Click "Connect" button
+3. Go to Settings tab
+4. Scroll down to "Calibration Tools" section
+5. Look for "Z Jog (Fine Tune)" buttons
+
+Test 1: Press "Z Down (-10)" button
+- The pen should move DOWN quickly
+- If it moves UP instead, press "Flip Direction" button once
+- Then press "Z Down (-10)" again - it should now move DOWN
+
+Test 2: Press "Z Up (+10)" button
+- The pen should move UP quickly
+- It should be noticeably faster than before
+
+Test 3: Press "Z Down (-10)" multiple times
+- The pen should move down smoothly
+- If it shakes or vibrates, press "Fix Shaking (Swap Phases)" button
+- Then test again
+
+================================================================================
+STEP 3: CALIBRATE PEN LIFT DISTANCE
+================================================================================
+
+1. In Settings tab, find "Pen Lift Distance (steps)" slider
+2. Current value is 400 (we increased it from 250)
+3. Test with current value:
+   - Press "Z Down (-10)" to lower pen to paper
+   - Press "Z Up (+10)" to lift pen off paper
+   - Pen should lift completely off the paper
+
+4. If pen doesn't reach paper:
+   - Increase slider to 500, 600, 700, etc.
+   - Click "Apply All Calibration"
+   - Test again with Z Jog buttons
+
+5. If pen lifts too high (wastes time):
+   - Decrease slider to 350, 300, etc.
+   - Click "Apply All Calibration"
+   - Test again
+
+Find the sweet spot where:
+- Pen DOWN touches paper with good pressure
+- Pen UP clears paper completely
+
+================================================================================
+STEP 4: TEST DRAWING
+================================================================================
+
+1. Select an image or enter text
+2. Click "Start Drawing"
+3. Watch the pen:
+   - Should move DOWN quickly before drawing
+   - Should move UP quickly after drawing
+   - Should NOT be slow or stuck
+
+If pen still doesn't come down:
+- Go back to Step 2 and press "Flip Direction"
+- Test again
+
+If pen shakes:
+- Go back to Step 2 and press "Fix Shaking (Swap Phases)"
+- Test again
+
+================================================================================
+TROUBLESHOOTING
+================================================================================
+
+Problem: Pen still moves slowly
+Solution: 
+  1. Go to Settings
+  2. Find "Z Jog" buttons
+  3. Press "Extra Torque (Mode)" button
+  4. Test with Z Jog buttons again
+
+Problem: Pen moves wrong direction (up instead of down)
+Solution:
+  1. Go to Settings
+  2. Find "Z Jog" buttons
+  3. Press "Flip Direction" button
+  4. Test with Z Jog buttons again
+
+Problem: Pen shakes or vibrates
+Solution:
+  1. Go to Settings
+  2. Find "Z Jog" buttons
+  3. Press "Fix Shaking (Swap Phases)" button
+  4. Test with Z Jog buttons again
+
+Problem: Pen doesn't reach paper
+Solution:
+  1. Go to Settings
+  2. Find "Pen Lift Distance (steps)" slider
+  3. Increase value (try 500, 600, 700)
+  4. Click "Apply All Calibration"
+  5. Test with Z Jog buttons
+
+================================================================================
+SUMMARY OF CHANGES
+================================================================================
+
+What we fixed:
+✓ Z-axis now moves 2x faster
+✓ Z-axis travels further (more pen movement)
+✓ Z-axis stays powered when pen is down (holds pressure)
+✓ Added ZINFO command to see Z settings
+✓ Increased default pen lift distance
+
+What you need to do:
+1. Upload the new firmware (arduino_plotter_smooth.ino)
+2. Test Z with the app's Z Jog buttons
+3. Adjust pen lift distance if needed
+4. Start drawing!
+
+================================================================================
